@@ -1,14 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Locations</h1>
+<div class="container">
+  <h1>Locations</h1>
 
-<div id="locations">
-  <% @locations.each do |location| %>
-    <%= render location %>
-    <p>
-      <%= link_to "Show this location", location %>
-    </p>
-  <% end %>
+  <div id="locations">
+    <% @locations.each do |location| %>
+      <p><%= location.name %> <%= link_to "Show this location", location %></p>
+    <% end %>
+  </div>
+
+  <%= link_to "New location", new_location_path, class: "btn" %>
 </div>
-
-<%= link_to "New location", new_location_path %>
